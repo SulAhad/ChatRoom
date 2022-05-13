@@ -1,0 +1,141 @@
+﻿<Window x:Class="ChatRoom.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChatRoom"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1024" Background="LightGray">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button
+            Click="escape_click"
+            Height="30"
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="1"
+            VerticalAlignment="Top"
+            >
+            Выйти
+        </Button>
+        <TextBox 
+            x:Name="welcome"
+            Grid.Row="0" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="3"
+            Width="400"
+            Height="50"
+            FontSize="30" 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center" 
+            >
+
+        </TextBox>
+        <ScrollViewer 
+            CanContentScroll="True" 
+            Grid.Row="1" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="3" 
+            Grid.RowSpan="2"
+            
+            >
+            <TextBox 
+                x:Name="chatRoom" 
+                Width="auto" 
+                Height="auto" 
+                BorderBrush="LightGray" 
+                BorderThickness="2px" 
+                IsReadOnly="True" 
+                ScrollViewer.CanContentScroll="False"
+                VerticalScrollBarVisibility="Disabled"
+                TextWrapping="Wrap"
+                >
+                Тестовое сообщение
+            </TextBox>
+        </ScrollViewer>
+        <TextBox 
+            x:Name="userRoom" 
+            Margin="0 5 0 0"
+            BorderBrush="LightGray" 
+            BorderThickness="2px"
+            ScrollViewer.CanContentScroll="True"
+            VerticalScrollBarVisibility="Auto"
+            TextWrapping="Wrap"
+            Grid.Row="3" 
+            Grid.Column="1" 
+            Grid.ColumnSpan="3" 
+            Grid.RowSpan="1"
+            
+            >Введите сообщение
+        </TextBox>
+
+        <Button 
+            x:Name="buttonRead" 
+            Click="buttonRead_Click"
+            Width="100" 
+            Height="30"
+            Margin="0 5 0 0"
+            FontSize="18" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Right"
+            Grid.Row="4" 
+            Grid.Column="3" 
+
+            >
+            Отправить
+        </Button>
+        
+        <Button 
+            x:Name="buttonCheck" 
+            Click="buttonCheck_Click"
+            Width="100" 
+            Height="30"
+            Margin="0 5 0 0"
+            FontSize="18" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Left"
+            Grid.Row="4" 
+            Grid.Column="1" 
+
+            >
+            Получить
+        </Button>
+        
+        <TextBox 
+            BorderBrush="LightGray" 
+            BorderThickness="2px" 
+            Grid.Row="1" 
+            Grid.Column="4" 
+            Grid.RowSpan="3" 
+            Margin="5 0 20 0"
+            TextWrapping="Wrap"
+            
+            >Список зарегистрированных пользователей
+        </TextBox>
+        
+        <TextBox 
+            BorderBrush="LightGray" 
+            BorderThickness="2px" 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            Grid.RowSpan="3" 
+            Margin="20 0 5 0"
+            TextWrapping="Wrap"
+            
+            >Контакты
+        </TextBox>
+    </Grid>
+</Window>
